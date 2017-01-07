@@ -1,0 +1,122 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[]{fullpage}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{tabu}
+\usepackage{graphicx}
+\usepackage{subfiles}
+\usepackage{blindtext}
+\usepackage{lipsum}
+\usepackage{color, colortbl}
+\usepackage{xcolor}
+\usepackage{tikz} 
+\usepackage{eso-pic}
+\usepackage{amsmath}
+
+\author{Tomas Lyngroth \\ Aleksander Holthe \\ Vanja Katinka Halvorsen \\ Stian Fredriksen \\ Kent Kjeldaas \\ Katrine Sundal Haune}
+
+\makeatletter
+\let\vapiqteam\@author
+\let\thedate\@date
+
+\definecolor{cadetgrey}{rgb}{0.57, 0.64, 0.69}      % Dark Color
+\definecolor{gainsboro}{rgb}{0.86, 0.86, 0.86}      % Light Color
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%% FRONT PAGE
+\begin{titlepage}
+    \centering
+    \pagecolor{gainsboro}
+    \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,inner sep=7pt] at (current page.north east)
+        {\includegraphics[scale=0.4]{VAPIQ-PICTURES/LogoMerged3}};        
+    \end{tikzpicture}
+	\\[3.0 cm]
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width = 0.35\textwidth]{VAPIQ-PICTURES//Logo2_Tilted.png}
+        \\[2.0 cm] 
+    \end{figure}                              
+    \textsc{\Huge TEST}  
+    \\[1 cm]
+    \textsc{\Large EXTRA NAME}   
+    \\[3.0 cm]
+	\large \vapiqteam      
+\end{titlepage}
+\pagecolor{white}
+
+
+%% DOCUMENT HISTORY TABLE
+%%% This table should be updated with all major changes
+%%%% OBS! When syncing with Github, remember to leave comment corresponding with version number from this table
+\begin{center}
+\section*{\textbf{Document History}}
+\begin{tabular}{cllll}
+\rowcolor{cadetgrey}
+\textbf{Version:}    &\textbf{Date:} 	 &\textbf{Comment:}    &\textbf{Done by:}   &\textbf{Approved by:}  \\
+
+0.0       & $07.01.17$   & Created .tex-file, standard front page, & VKH  & Name \\
+          &              & tables and structures. Github Synched.    &     & \\\rowcolor{gainsboro}
+0.1       & $00.00.00$   & what was done  & Name    & Name          \\
+0.2       & $00.00.00$   & what was done  & Name    & Name          \\ \rowcolor{gainsboro}
+0.3       & $00.00.00$   & what was done  & Name    & Neme          \\
+\end{tabular}                                                                   
+\end{center}
+
+\vspace*{3.0 cm}
+
+%% ACRONYMS
+\begin{center}
+\section*{\textbf{Acronyms}}
+\begin{tabular}{ll}
+\rowcolor{cadetgrey}
+    &   \\
+Variable Pitch Quadcopter   & VAPIQ \\\rowcolor{gainsboro}
+Thomas Lyngroth       & TH          \\ 
+Alekander Holthe      & AH          \\\rowcolor{gainsboro}
+Vanja Katinka Halvorsen     & VKH   \\
+Stian Fredriksen      & SF          \\\rowcolor{gainsboro}
+Kent Kjeldaas         & KK          \\
+Katrine Sundal Haune  & KSH         \\\rowcolor{gainsboro}
+\end{tabular}                                                             
+\end{center}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% ABSTRACT
+%\subfile{sections/Abstract}
+
+
+% LIST OF STUFF
+\tableofcontents
+\newpage
+
+%% SEE MAL-file
+
+% INTRODUCTION 
+%\subfile{sections/Introduction}
+
+% CHAPTER
+%\subfile{sections/CHAPTER_file}
+%\newpage
+
+% BASIC TABLE SETUP
+%\subfile{sections/TABLE_MAL_file}
+%\newpage
+
+% BASIC PICTURE SETUP
+%\subfile{sections/PICTURE_MAL_file}
+%\newpage
+
+
+
+\end{document}
