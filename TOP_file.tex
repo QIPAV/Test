@@ -13,7 +13,12 @@
 \usepackage{tikz} 
 \usepackage{eso-pic}
 \usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{placeins}
 \usepackage{hyperref}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+
 
 \author{Aleksander Holthe  \\ Katrine Sundal Haune \\ Kent Kjeldaas \\ Stian Fredriksen \\ Tomas Lyngroth \\ Vanja Katinka Halvorsen}
 
@@ -24,9 +29,30 @@
 \definecolor{cadetgrey}{rgb}{0.57, 0.64, 0.69}      % Dark Color
 \definecolor{gainsboro}{rgb}{0.86, 0.86, 0.86}      % Light Color
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\testcard}[9]{
+\begin{table}[ht]
+\begin{tabularx}{\linewidth}{| p{0.23\textwidth} p{0.16\textwidth} p{0.16\textwidth} p{0.16\textwidth} p{0.16\textwidth} |}
+\hline 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+        \rowcolor{cadetgrey}
+        \multicolumn{5}{|l|}{} \\
+        \rowcolor{cadetgrey} 
+        \centering \Large{Test ID:} & \centering\Large{AC ID:} & \centering\Large{Sprint:} & \centering\Large{BL ID} & 
+        \centering\Large{Jira ID: } \\  
+        &\cellcolor{gainsboro}&\cellcolor{gainsboro}&\cellcolor{gainsboro} &\cellcolor{gainsboro} & \cellcolor{gainsboro} \\
+        \textbf{#1}\cellcolor{gainsboro}\centering  & \textbf{#2}\cellcolor{gainsboro}\centering & \textbf{#3}\cellcolor{gainsboro}\centering & \textbf{#4}\cellcolor{gainsboro}\centering & \textbf{#5}\cellcolor{gainsboro}\centering \\ &\hline
+        \textbf{Acceptance Criteria:}\cellcolor{gainsboro} & \multicolumn{4}{l|}{#6}  \\ [10pt] \hline
+        \textbf{Verification Method:}\cellcolor{gainsboro} & \multicolumn{4}{l|}{#7} \\ [10pt] \hline
+        \textbf{Result(s)/Report(s):}\cellcolor{gainsboro} & \multicolumn{4}{l|}{#8} \\ [10pt] \hline
+        \textbf{Performed By:}\cellcolor{gainsboro} & \multicolumn{4}{l|}{#9} \\ [10pt]
+        \hline
+\end{tabularx}
+\end{table}
+\FloatBarrier}
+%%   Template  
+% \testcard{Test ID}{AC ID}{Sprint}{BL ID}{Jira ID}{Acceptance Criteria}{Verification Method}{Results/Reports}{Performed by}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -44,7 +70,7 @@
         \includegraphics[width = 0.35\textwidth]{VAPIQ-PICTURES//Logo2_Tilted.png}
         \\[2.0 cm] 
     \end{figure}                              
-    \textsc{\Huge Test Specification}  
+    \textsc{\Huge Test Plan}  
     \\[4 cm]
     %\textsc{\Large EXTRA NAME}   
     %\\[3.0 cm]
@@ -65,9 +91,9 @@
 0.0       & $07.01.17$   & Created .tex-file, standard front page, & VKH  & VKH \\
           &              & tables and structures. Github Synched.    &     & \\\rowcolor{gainsboro}
 0.1       & $20.01.17$   & Started Introduction and document system  & VKH    & VKH          \\
-
-0.2       & $21.01.17$   & what was done  & Name    & Name          \\ \rowcolor{gainsboro}
-0.3       & $00.00.00$   & what was done  & Name    & Neme          \\
+0.2       & $21.01.17$   & Test Plan Document reorganized and  & VKH    & VKH          \\ 
+          &              & new chapters are written.          &     &          \\ \rowcolor{gainsboro}
+0.3       & $22.01.17$   & what was done  & Name    & Neme          \\
 \end{tabular}                                                                   
 \end{center}
 
@@ -129,17 +155,14 @@ Unmanned aerial vehicle     & UAV   \\
 \subfile{Sections/Introduction}
 \newpage
 
-% CHAPTERs:
-\subfile{Sections/Test_Plan}
+\subfile{Sections/Test_Strategy}
 \newpage
 
+% CHAPTERs:
 \subfile{Sections/Testing_Methods}
 \newpage
 
-\subfile{Sections/Test_card}
-\newpage
-
-\subfile{Sections/Test_Report}
+\subfile{Sections/Test_Tools}
 \newpage
 
 %References
